@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import messagePlugin from './utils/message.plugin'
+import Loader from './components/app/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min.js'
 
@@ -51,6 +52,7 @@ onAuthStateChanged(auth, () => {
       .use(store)
       .use(router)
       .use(messagePlugin)
+      .component('Loader', Loader)
       .mount('#app')
   }
 })

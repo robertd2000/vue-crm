@@ -16,8 +16,9 @@ export default {
         throw new Error(error)
       }
     },
-    async logout() {
+    async logout({ commit }) {
       await signOut(auth)
+      commit('clearInfo')
     },
     async register({ dispatch, commit }, { email, password, name }) {
       try {
